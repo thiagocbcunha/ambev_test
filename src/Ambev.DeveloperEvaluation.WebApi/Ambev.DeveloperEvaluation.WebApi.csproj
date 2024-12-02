@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -11,13 +11,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Users\ListUsers\**" />
+    <Compile Remove="Features\Users\UpdateUser\**" />
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Features\Users\ListUsers\**" />
+    <Content Remove="Features\Users\UpdateUser\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Features\Users\ListUsers\**" />
+    <EmbeddedResource Remove="Features\Users\UpdateUser\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Features\Users\ListUsers\**" />
+    <None Remove="Features\Users\UpdateUser\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MediatR" Version="12.4.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,8 +42,6 @@
   <ItemGroup>
     <Folder Include="Features\Users\GetUser\" />
     <Folder Include="Features\Users\DeleteUser\" />
-    <Folder Include="Features\Users\ListUsers\" />
-    <Folder Include="Features\Users\UpdateUser\" />
   </ItemGroup>
 
 </Project>
